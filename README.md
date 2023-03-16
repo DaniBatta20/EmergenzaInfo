@@ -1,6 +1,6 @@
 # EmergenzaInfo Official GitHub Repository
 
-#Solo per i fedeli tesserati
+# Riservato ai fedelissimi tesserati
 "Se ni’ mondo esistesse un po’ di bene
 e ognun si honsiderasse suo fratello
 ci sarebbe meno pensieri e meno pene
