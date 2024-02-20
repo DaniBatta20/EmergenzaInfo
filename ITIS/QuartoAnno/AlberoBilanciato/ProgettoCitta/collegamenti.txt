@@ -1,0 +1,6 @@
+Milano,Firenze,24
+Milano,Roma,80
+Firenze,Milano,24
+Firenze,Roma,55
+Roma,Milano,80
+Roma,Firenze,55
