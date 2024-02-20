@@ -14,23 +14,29 @@ using namespace std;
 #define NOME_FILE_CITTA "Citta.txt"
 #define NOME_FILE_COLLEGAMENTI "collegamenti.txt"
 
+
+//Definiamo le struct che caratterizzeranno il nostro progetto:
+
+//Collegamento: rappresenta un arco "pesato" tra due nodi
 struct collegamento{
 	int distanza;
 	string partenza;
 	string arrivo;
 };
 
+//Nodo: rappresenta una città del problema
 struct nodo{
-	
 	string luogo;
 	vector<collegamento> cittaVicine;
 	
 };
 
+
+//Funzione che legge i collegamenti e da un file di testo
 void leggicollegamenti(vector<nodo>& nodi){
 	
 	string line;
-	ifstream fin("collegamenti.txt");
+	ifstream fin(NOME_FILE_COLLEGAMENTI);
 	
 	//controllo se ci sono stati errori nell'apertura del file
 	if (!fin.is_open()) {
@@ -47,7 +53,7 @@ void leggicollegamenti(vector<nodo>& nodi){
 	for(int i = 0; i < nodi.size(); i++){
 	    //Chiudo e riapro il file;
 	    fin.close();
-	    fin.open("collegamenti.txt");
+	    fin.open(NOME_FILE_COLLEGAMENTI);
 	    
 	    //Cerco nel file di testo tutti i collegamenti che hanno come partenza una certa città
 		while(getline(fin, line)){
@@ -68,6 +74,8 @@ void leggicollegamenti(vector<nodo>& nodi){
     fin.close(); //importantissimo! I file vanno sempre chiusi per evitare brutte sorprese...
 }
 
+
+//Funzione che inizializza i nomi dei nodi del grafo e richiama la funzione che legge i collegamenti da un altro file
 void leggiNodi(vector<nodo>& nodi){
 	string line;	//riga
 	ifstream fin(NOME_FILE_CITTA);
